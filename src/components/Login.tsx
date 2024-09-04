@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import axios from "../axiosInstance";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -8,7 +8,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      await axios.post("/api/auth/login", credentials, {
+      await axios.post("auth/login", credentials, {
         withCredentials: true,
       });
       navigate("/");

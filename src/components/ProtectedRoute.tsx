@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../axiosInstance";
 
 type ProtectedRouteProps = { children: React.ReactNode };
 
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   const [auth, setAuth] = useState<null | boolean>(null);
 
+  console.log("Auth", auth);
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await axios.get("/api/auth/verify-token", {
+        const response = await axios.get("auth/verify-token", {
           withCredentials: true,
         });
         setAuth(response.data.isAuthenticated);

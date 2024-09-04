@@ -6,7 +6,11 @@ const BlogSection = () => {
   return (
     <div>
       <h2>{section} Section</h2>
-      {/* Display blog posts based on the section */}
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus
+        veritatis illo soluta, suscipit aut hic cumque repellendus fugit ullam
+        id officia, quae sint velit odit? Voluptatibus culpa nostrum totam amet.
+      </p>
     </div>
   );
 };
